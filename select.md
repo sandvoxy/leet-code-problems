@@ -3,7 +3,7 @@
 Table: Products
 
 | Column Name | Type    |
-|-------|---------------|
+|-------------|---------|
 | product_id  | int     |
 | low_fats    | enum    |
 | recyclable  | enum    |
@@ -31,7 +31,7 @@ Table: Customer
 
 
 | Column Name | Type    |
-|-------|-----|
+|-------------|---------|
 | id          | int     |
 | name        | varchar |
 | referee_id  | int     |
