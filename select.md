@@ -50,7 +50,7 @@ WHERE referee_id <> 2
 OR referee_id IS NULL;
 ```
 
-[595. Big Countries](https://leetcode.com/problems/find-customer-referee/?envType=study-plan-v2&envId=top-sql-50](https://leetcode.com/problems/big-countries/)
+[595. Big Countries](https://leetcode.com/problems/big-countries/)
 
 Table: World
 
