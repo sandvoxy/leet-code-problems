@@ -1,6 +1,6 @@
-**I. SELECT PROBLEMS**
+## I. SELECT PROBLEMS ##
 
-**[1757. Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products/?envType=study-plan-v2&envId=top-sql-50)**
+### [1757. Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Products
 
@@ -27,7 +27,7 @@ WHERE low_fats = 'Y'
 AND recyclable = 'Y'; 
 ```
 
-**[584. Find Customer Referee](https://leetcode.com/problems/find-customer-referee/?envType=study-plan-v2&envId=top-sql-50)**
+### [584. Find Customer Referee](https://leetcode.com/problems/find-customer-referee/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Customer
 
@@ -52,7 +52,7 @@ WHERE referee_id <> 2
 OR referee_id IS NULL;
 ```
 
-**[595. Big Countries](https://leetcode.com/problems/big-countries/)**
+### [595. Big Countries](https://leetcode.com/problems/big-countries/) ###
 
 Table: World
 
@@ -75,7 +75,7 @@ WHERE area >= 3000000
 OR population >= 25000000;
 ```
 
-**[595. Article Views I](https://leetcode.com/problems/article-views/)**
+### [595. Article Views I](https://leetcode.com/problems/article-views/) ###
 
 Table: Views
 
@@ -102,7 +102,7 @@ AND author_id = viewer_id
 ORDER BY author_id ASC;
 ```
 
-**[1683. Invalid Tweets](https://leetcode.com/problems/invalid-tweets/?envType=study-plan-v2&envId=top-sql-50)**
+### [1683. Invalid Tweets](https://leetcode.com/problems/invalid-tweets/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Tweets
 
@@ -124,9 +124,9 @@ SELECT tweet_id FROM Tweets
 WHERE LENGTH(content) > 15;
 ```
 
-**II. BASIC JOINS**
+## II. BASIC JOINS ##
 
-**[1378. Replace Employee ID With The Unique Identifier](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/?envType=study-plan-v2&envId=top-sql-50)**
+### [1378. Replace Employee ID With The Unique Identifier](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Employees
 
@@ -158,7 +158,7 @@ LEFT JOIN EmployeeUNI
 ON Employees.id = EmployeeUNI.id;
 ```
 
-**[1068. Product Sales Analysis I](https://leetcode.com/problems/product-sales-analysis-i/?envType=study-plan-v2&envId=top-sql-500)**
+### [1068. Product Sales Analysis I](https://leetcode.com/problems/product-sales-analysis-i/?envType=study-plan-v2&envId=top-sql-500) ###
 
 Table: Sales
 
@@ -197,7 +197,7 @@ LEFT JOIN Product
 ON Sales.product_id = Product.product_id;
 ```
 
-**[1581. Customer Who Visited but Did Not Make Any Transactions](https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/?envType=study-plan-v2&envId=top-sql-50)**
+### [1581. Customer Who Visited but Did Not Make Any Transactions](https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Visits
 
@@ -233,7 +233,7 @@ WHERE amount IS NULL
 GROUP by customer_id;
 ```
 
-**[197. Rising Temperature](https://leetcode.com/problems/rising-temperature/?envType=study-plan-v2&envId=top-sql-50)**
+### [197. Rising Temperature](https://leetcode.com/problems/rising-temperature/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Weather
 
@@ -258,7 +258,7 @@ WHERE DATEDIFF(a.recordDate , b.recordDate) = 1
 AND a.temperature > b.temperature;
 ```
 
-**[577. Employee Bonus](https://leetcode.com/problems/employee-bonus/?envType=study-plan-v2&envId=top-sql-50)**
+### [577. Employee Bonus](https://leetcode.com/problems/employee-bonus/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Employee
 
@@ -296,7 +296,7 @@ WHERE b.bonus < 1000
 OR b.bonus IS NULL;
 ```
 
-**[1280. Students and Examinations](https://leetcode.com/problems/students-and-examinations/?envType=study-plan-v2&envId=top-sql-50)**
+### [1280. Students and Examinations](https://leetcode.com/problems/students-and-examinations/?envType=study-plan-v2&envId=top-sql-50) ###
 
 Table: Students
 
@@ -345,9 +345,9 @@ GROUP BY st.student_id, su.subject_name
 ORDER BY st.student_id;
 ```
 
-**III. Basic Aggregate Functions**
+## III. Basic Aggregate Functions ##
 
-**[620. Not Boring Movies](https://leetcode.com/problems/not-boring-movies/?envType=study-plan-v2&envId=top-sql-50)**
+### [620. Not Boring Movies](https://leetcode.com/problems/not-boring-movies/?envType=study-plan-v2&envId=top-sql-50) ###
 
  Table: Cinema
 
@@ -375,7 +375,7 @@ AND description != 'boring'
 ORDER by rating DESC;
 ```
 
-**[1251. Average Selling Price](https://leetcode.com/problems/average-selling-price/?envType=study-plan-v2&envId=top-sql-50)**
+### [1251. Average Selling Price](https://leetcode.com/problems/average-selling-price/?envType=study-plan-v2&envId=top-sql-50) ###
 
  Table: Prices
 
@@ -415,9 +415,9 @@ WHERE u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY p.product_id; 
 ```
 
-**IV. Sorting and Grouping**
+## IV. Sorting and Grouping ##
 
-**[1729. Find Followers Count](https://leetcode.com/problems/find-followers-count/?envType=study-plan-v2&envId=top-sql-50)**
+### [1729. Find Followers Count](https://leetcode.com/problems/find-followers-count/?envType=study-plan-v2&envId=top-sql-50) ###
 
  Table: Followers
 
@@ -441,9 +441,9 @@ GROUP BY user_id
 ORDER BY user_id ASC;
 ```
 
-**IV. Advanced Selects and Joins**
+## V. Advanced Selects and Joins ##
 
-**[1731. The Number of Employees Which Report to Each Employee](https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/?envType=study-plan-v2&envId=top-sql-50)**
+### [1731. The Number of Employees Which Report to Each Employee](https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/?envType=study-plan-v2&envId=top-sql-50) ###
 
  Table: Employees
 
