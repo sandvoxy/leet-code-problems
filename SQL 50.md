@@ -74,34 +74,8 @@ FROM World
 WHERE area >= 3000000
 OR population >= 25000000;
 ```
-**[595. Article Views](https://leetcode.com/problems/big-countries/)**
 
-Table: Views
-
-| Column Name | Type    |
-|-------------|---------|
-| article_id  | int     |
-| author_id   | int     |
-| viewer_id   | int     | 
-| view_date   | date    |
-
-There is no primary key (column with unique values) for this table, the table may have duplicate rows.
-Each row of this table indicates that some viewer viewed an article (written by some author) on some date. 
-Note that equal author_id and viewer_id indicate the same person.
-
-Write a solution to find all the authors that viewed at least one of their own articles.
-
-Return the result table sorted by id in ascending order.
-
-**Solution:**
-```sql
-SELECT DISTINCT author_id AS id FROM Views
-WHERE article_id >= 1
-AND author_id = viewer_id
-ORDER BY author_id ASC;
-```
-
-**[595. Article Views](https://leetcode.com/problems/article-views/)**
+**[595. Article Views I](https://leetcode.com/problems/article-views/)**
 
 Table: Views
 
