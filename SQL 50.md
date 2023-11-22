@@ -334,9 +334,9 @@ Return the result table ordered by student_id and subject_name.
 
 **Solution:**
 ```sql
-SELECT st.student_id , st.student_name
-,su.subject_name
-,COUNT(ex.student_id) AS attended_exams
+SELECT st.student_id , st.student_name,
+su.subject_name,
+COUNT(ex.student_id) AS attended_exams
 FROM STUDENTS st
 CROSS JOIN SUBJECTS su 
 LEFT JOIN EXAMINATIONS ex ON st.student_id = ex.student_id
