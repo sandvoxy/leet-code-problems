@@ -1,4 +1,4 @@
-**SELECT PROBLEMS**
+**I. SELECT PROBLEMS**
 
 **[1757. Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products/?envType=study-plan-v2&envId=top-sql-50)**
 
@@ -124,7 +124,7 @@ SELECT tweet_id FROM Tweets
 WHERE LENGTH(content) > 15;
 ```
 
-**BASIC JOINS**
+**II. BASIC JOINS**
 
 **[1378. Replace Employee ID With The Unique Identifier](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/?envType=study-plan-v2&envId=top-sql-50)**
 
