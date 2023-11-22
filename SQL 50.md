@@ -345,6 +345,34 @@ GROUP BY st.student_id, su.subject_name
 ORDER BY st.student_id;
 ```
 
- 
+**III. Basic Aggregate Functions**
+
+**[620. Not Boring Movies](https://leetcode.com/problems/not-boring-movies/?envType=study-plan-v2&envId=top-sql-50)**
+
+ Table: Cinema
+
+| Column Name  | Type    |
+|--------------|---------|
+| id           | int     |
+| movie        | varchar |
+| description  | varchar |
+| rating       | float   |
+
+id is the primary key (column with unique values) for this table.
+Each row contains information about the name of a movie, its genre, and its rating.
+rating is a 2 decimal places float in the range [0, 10]
+
+Write a solution to report the movies with an odd-numbered ID and a description that is not "boring".
+
+Return the result table ordered by rating in descending order.
+
+**Solution:**
+```sql
+SELECT * 
+FROM Cinema
+WHERE mod(id,2) <> 0
+AND description != 'boring'
+ORDER by rating DESC;
+```
 
 
