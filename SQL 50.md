@@ -27,7 +27,7 @@ WHERE low_fats = 'Y'
 AND recyclable = 'Y'; 
 ```
 
-[584. Find Customer Referee](https://leetcode.com/problems/find-customer-referee/?envType=study-plan-v2&envId=top-sql-50)
+**[584. Find Customer Referee](https://leetcode.com/problems/find-customer-referee/?envType=study-plan-v2&envId=top-sql-50)**
 
 Table: Customer
 
@@ -52,7 +52,7 @@ WHERE referee_id <> 2
 OR referee_id IS NULL;
 ```
 
-[595. Big Countries](https://leetcode.com/problems/big-countries/)
+**[595. Big Countries](https://leetcode.com/problems/big-countries/)**
 
 Table: World
 
@@ -74,3 +74,30 @@ FROM World
 WHERE area >= 3000000
 OR population >= 25000000;
 ```
+**[595. Article Views](https://leetcode.com/problems/big-countries/)**
+
+Table: Views
+
+| Column Name | Type    |
+|-------------|---------|
+| article_id  | int     |
+| author_id   | int     |
+| viewer_id   | int     | 
+| view_date   | date    |
+
+There is no primary key (column with unique values) for this table, the table may have duplicate rows.
+Each row of this table indicates that some viewer viewed an article (written by some author) on some date. 
+Note that equal author_id and viewer_id indicate the same person.
+
+Write a solution to find all the authors that viewed at least one of their own articles.
+
+Return the result table sorted by id in ascending order.
+
+**Solution:**
+```sql
+SELECT DISTINCT author_id AS id FROM Views
+WHERE article_id >= 1
+AND author_id = viewer_id
+ORDER BY author_id ASC;
+```
+
