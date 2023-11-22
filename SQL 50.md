@@ -415,6 +415,32 @@ WHERE u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY p.product_id; 
 ```
 
+**IV. Sorting and Grouping**
+
+**[1729. Find Followers Count](https://leetcode.com/problems/find-followers-count/?envType=study-plan-v2&envId=top-sql-50)**
+
+ Table: Followers
+
+| Column Name  | Type    |
+|--------------|---------|
+| user_id      | int     |
+| follower_id  | int     |
+
+(user_id, follower_id) is the primary key (combination of columns with unique values) for this table.
+This table contains the IDs of a user and a follower in a social media app where the follower follows the user.
+
+Write a solution that will, for each user, return the number of followers.
+
+Return the result table ordered by user_id in ascending order.
+
+**Solution:**
+```sql
+SELECT user_id, COUNT(follower_id) AS followers_count
+FROM Followers F
+GROUP BY user_id
+ORDER BY user_id ASC;
+```
+
 
 
 
