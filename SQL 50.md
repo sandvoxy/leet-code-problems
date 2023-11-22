@@ -110,6 +110,7 @@ Table: Tweets
 |-------------|---------|
 | tweet_id    | int     |
 | content     | varchar |
+
 tweet_id is the primary key (column with unique values) for this table.
 This table contains all the tweets in a social media app.
 
@@ -122,3 +123,38 @@ Return the result table in any order.
 SELECT tweet_id FROM Tweets 
 WHERE LENGTH(content) > 15;
 ```
+
+**BASIC JOINS**
+
+**[1378. Replace Employee ID With The Unique Identifier](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/?envType=study-plan-v2&envId=top-sql-50)**
+
+Table: Employees
+
+| Column Name | Type    |
+|-------------|---------|
+| id          | int     |
+| name        | varchar |
+
+id is the primary key (column with unique values) for this table.
+Each row of this table contains the id and the name of an employee in a company.
+
+| Column Name | Type    |
+|-------------|---------|
+| id          | int     |
+| unique_id   | int     |
+
+(id, unique_id) is the primary key (combination of columns with unique values) for this table.
+Each row of this table contains the id and the corresponding unique id of an employee in the company.
+
+Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null.
+
+Return the result table in any order.
+
+**Solution:**
+```sql
+SELECT unique_id, name
+FROM Employees
+LEFT JOIN EmployeeUNI
+ON Employees.id = EmployeeUNI.id;
+```
+
