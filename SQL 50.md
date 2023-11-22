@@ -224,6 +224,7 @@ Write a solution to find the IDs of the users who visited without making any tra
 
 Return the result table sorted in any order.
 
+**Solution:**
 ```sql
 SELECT customer_id, COUNT(customer_id) AS count_no_trans
 FROM Visits
@@ -249,6 +250,7 @@ Write a solution to find all dates' Id with higher temperatures compared to its 
 
 Return the result table in any order.
 
+**Solution:**
 ```sql
 SELECT a.Id
 FROM Weather a, Weather b
@@ -256,6 +258,45 @@ WHERE DATEDIFF(a.recordDate , b.recordDate) = 1
 AND a.temperature > b.temperature;
 ```
 
+**[577. Employee Bonus](https://leetcode.com/problems/employee-bonus/?envType=study-plan-v2&envId=top-sql-50)**
 
+Table: Employee
+
+| Column Name  | Type    |
+|--------------|---------|
+| empId        | int     |
+| name         | varchar |
+| supervisor   | int     |
+| salary       | int     |
+
+empId is the column with unique values for this table.
+Each row of this table indicates the name and the ID of an employee in addition to their salary and the id of their manager.
+
+Table: Bonus
+
+| Column Name  | Type    |
+|--------------|---------|
+| empId        | int     |
+| bonus        | int     |
+
+empId is the column of unique values for this table.
+empId is a foreign key (reference column) to empId from the Employee table.
+Each row of this table contains the id of an employee and their respective bonus.
+
+Write a solution to report the name and bonus amount of each employee with a bonus less than 1000.
+
+Return the result table in any order.
+
+**Solution:**
+```sql
+SELECT e.name, b.bonus
+FROM Employee e
+LEFT JOIN BONUS b ON e.empId = b.empID
+WHERE b.bonus < 1000 
+OR b.bonus IS NULL;
+```
+
+
+ 
 
 
