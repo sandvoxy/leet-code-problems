@@ -345,6 +345,36 @@ GROUP BY st.student_id, su.subject_name
 ORDER BY st.student_id;
 ```
 
+### [570. Managers with at Least 5 Direct Reports](https://leetcode.com/problems/managers-with-at-least-5-direct-reports/?envType=study-plan-v2&envId=top-sql-50)) ###
+
+Table: Employee
+
+| Column Name | Type    |
+|-------------|---------|
+| id          | int     |
+| name        | varchar |
+| department  | varchar |
+| managerId   | int     |
+
+id is the primary key (column with unique values) for this table.
+Each row of this table indicates the name of an employee, their department, and the id of their manager.
+If managerId is null, then the employee does not have a manager.
+No employee will be the manager of themself.
+
+Write a solution to find managers with at least five direct reports.
+
+Return the result table in any order.
+
+**Solution:**
+```sql
+SELECT E1.name
+FROM Employee AS E1
+INNER JOIN Employee AS E2
+ON E2.managerId = E1.id
+GROUP BY E2.managerId
+HAVING COUNT(E2.managerId) >=5;
+```
+
 ## III. Basic Aggregate Functions ##
 
 ### [620. Not Boring Movies](https://leetcode.com/problems/not-boring-movies/?envType=study-plan-v2&envId=top-sql-50) ###
