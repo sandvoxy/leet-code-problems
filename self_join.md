@@ -20,9 +20,10 @@ Return the result table in any order.
 
 **Solution:**
 ```sql
-SELECT m.name AS employee
-FROM employee as e
-LEFT JOIN employee as m
-ON e.id = m.managerid
-WHERE m.salary > e.salary;  
+SELECT
+    A.name AS Employee
+FROM employee AS A
+INNER JOIN employee AS B
+ON A.Managerid = B.id
+WHERE A.Salary > B.Salary;
 ```
