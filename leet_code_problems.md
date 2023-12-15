@@ -46,5 +46,8 @@ Return the result table in any order.
 
 **Solution:**
 ```sql
-
+SELECT email
+FROM person
+GROUP BY email
+HAVING count(email) > 1;
 ```
