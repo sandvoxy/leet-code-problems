@@ -445,6 +445,43 @@ WHERE u.purchase_date BETWEEN p.start_date AND p.end_date
 GROUP BY p.product_id; 
 ```
 
+### [1075. Project Employees I](https://leetcode.com/problems/project-employees-i/description/?envType=study-plan-v2&envId=top-sql-50) ###
+
+ Table: Project
+
+| Column Name  | Type    |
+|--------------|---------|
+| project_id   | int     |
+| employee_id  | date    |
+
+(project_id, employee_id) is the primary key of this table.
+employee_id is a foreign key to Employee table.
+Each row of this table indicates that the employee with employee_id is working on the project with project_id.
+ 
+ Table: Employee
+
+| Column Name      | Type    |
+|------------------|---------|
+| employee_id      | int     |
+| name             | varchar |
+| experience_years | int     |
+
+employee_id is the primary key of this table. It's guaranteed that experience_years is not NULL.
+Each row of this table contains information about one employee.
+
+Write an SQL query that reports the average experience years of all the employees for each project, rounded to 2 digits.
+
+Return the result table in any order.
+
+**Solution:**
+```sql
+SELECT project_id, ROUND(AVG(experience_years), 2) AS average_years
+FROM Project 
+LEFT JOIN Employee ON Project.employee_id = Employee.employee_id
+WHERE experience_years IS NOT NULL
+GROUP BY project_id; 
+```
+
 ## IV. Sorting and Grouping ##
 
 ### [2356. Number of Unique Subjects Taught by Each Teacher](https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/?envType=study-plan-v2&envId=top-sql-50) ###
